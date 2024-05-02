@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Keyboard</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h1>Welcome to Eye Keyboard!</h1>
+        <p>Choose an action:</p>
+        <ul>
+            <li><a href="/keyboard">Use Keyboard</a></li>
+            <li><a href="/board">View Writing Board</a></li>
+        </ul>
+    </div>
+    
+    <div style="display: flex; justify-content: space-between;">
+        <!-- Video Screen -->
+        <div style="margin-right: 20px;">
+            <h2>Video Screen</h2>
+            <img src="{{ url_for('video_feed') }}" width="640" height="480" style="border: 1px solid black;">
+        </div>
+
+        <!-- Virtual Keyboard -->
+        <div>
+            <h2>Keyboard</h2>
+            <canvas id="keyboardCanvas" width="1000" height="600"></canvas>
+        </div>
+    </div>
+
+    <!-- Writing Board -->
+    <h2>Writing Board</h2>
+    <canvas id="boardCanvas" width="1400" height="300"></canvas>
+
+    <script>
+        // JavaScript code to draw virtual keyboard
+        var keyboardCanvas = document.getElementById("keyboardCanvas");
+        var ctxKeyboard = keyboardCanvas.getContext("2d");
+        // Write JavaScript code here to draw the virtual keyboard using data from Flask
+        // You can use Flask variables or AJAX to get data from the Flask application
+
+        // JavaScript code to draw writing board
+        var boardCanvas = document.getElementById("boardCanvas");
+        var ctxBoard = boardCanvas.getContext("2d");
+        // Write JavaScript code here to draw the writing board using data from Flask
+        // You can use Flask variables or AJAX to get data from the Flask application
+    </script>
+</body>
+</html>
